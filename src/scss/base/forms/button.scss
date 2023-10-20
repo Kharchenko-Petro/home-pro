@@ -2,13 +2,44 @@
 // Снипет (HTML): btn
 
 .button {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&._fw {
-		width: 100%;
-	}
+  background-color: $bgColorLight;
+  border-radius: rem(60);
+	color: #fff;
+  font-size: rem(24);
+  font-weight: 700;
+  min-height: rem(64);
+  line-height: 1.33;
+  padding: rem(8);
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  @media (any-hover: hover) {
+    &:hover {
+			background-color: $bgColorSemi;
+    }
+  }
+	&--min {}
+	&--white {}
+  &--icon {
+    span {
+			padding-left: rem(16);
+
+      display: flex;
+      align-items: center;
+			justify-content: center;
+			gap: rem(16);
+      &::after {
+        content: "";
+        background: #fff url("@img/icons/phone.svg") center no-repeat;
+				flex: 0 0 rem(48);
+				width: rem(48);
+				height: rem(48);
+				border-radius: 50%;
+      }
+    }
+  }
+  &._fw {
+    width: 100%;
+  }
 }

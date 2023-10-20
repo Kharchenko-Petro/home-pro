@@ -1,1 +1,67 @@
 // Заголовки, общие БЄМ блоки и проче...
+.block-header {
+  display: grid;
+  gap: rem(24);
+  // .block-header--center
+  &--center {
+    // min-width: rem(650);
+    text-align: center;
+  }
+  &--inline {
+    grid-template-columns: minmax(auto, rem(586)) minmax(auto, rem(613));
+    justify-content: space-between;
+    align-items: end;
+  }
+  // .block-header__title
+  &__title {
+    color: $darkColor;
+    @include adaptiveValue("font-size", 52, 32);
+    font-weight: 700;
+    line-height: 1.23;
+    // .block-header__title--big
+    &--big {
+      @include adaptiveValue("font-size", 64, 38);
+      font-weight: 800;
+    }
+    // .block-header__title--white
+    &--white {
+      color: #fff;
+    }
+  }
+  // .block-header__text
+  &__text {
+    p {
+      line-height: 1.55;
+    }
+  }
+}
+
+/*
+<div class="block-header">
+            <h1 class="block-header__title">
+              Professional for your home services
+            </h1>
+            <div class="block-header__text">
+              <p>
+                You need help for home care? We are home care professionals
+                focused in the US region. We provide several services that
+                support home services
+              </p>
+            </div>
+          </div>
+*/
+
+.done {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: rem(40);
+  row-gap: rem(8);
+  // .done__item
+  &__item {
+    color: $bgColorLight;
+    @include adaptiveValue("font-size", 20, 18);
+    padding-left: rem(32);
+    background: url("@img/icons/check.svg") left no-repeat;
+    line-height: 1.06;
+  }
+}
